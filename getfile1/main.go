@@ -19,7 +19,7 @@ func main() {
 	// 0. register Starlark builtin
 	registrar := starlark.StringDict{"config": starlark.NewBuiltin("config", configFn)}
 
-	// 1. Exec script file
+	// 1. Exec script file with registered builtins
 	_, err := starlark.ExecFile(&starlark.Thread{}, "getfile.star", nil, registrar)
 	if err != nil {
 		log.Fatalf("Starlark Exec: %s", err)

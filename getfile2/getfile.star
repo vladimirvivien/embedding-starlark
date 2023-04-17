@@ -4,4 +4,5 @@ config(
 )
 
 def proc_line(line):
-    return lines
+    print(line)
+    return line
